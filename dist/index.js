@@ -75,7 +75,7 @@ class WOKCommands extends events_1.EventEmitter {
         }
         else {
             if (showWarns) {
-                console.warn('command-handler > No MongoDB connection URI provided. Some features might not work! See this for more details:\nhttps://docs.wornoffkeys.com/databases/mongodb');
+           //     console.warn('command-handler > No MongoDB connection URI provided. Some features might not work! See this for more details:\nhttps://docs.wornoffkeys.com/databases/mongodb');
             }
             this.emit(Events_1.default.DATABASE_CONNECTED, null, '');
         }
