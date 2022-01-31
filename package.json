@@ -1,5 +1,5 @@
 {
-  "name": "wokcommands",
+  "name": "command-handler",
   "version": "1.5.3",
   "main": "dist/index.js",
   "typings": "./typings.d.ts",
