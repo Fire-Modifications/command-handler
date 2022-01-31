@@ -1,4 +1,4 @@
-# Fire Modifications Did not Create this project. This was forked from [this repo])https://github.com/AlexzanderFlores/WOKCommands)
+# Fire Modifications Did not Create this project. This was forked from [this repo](https://github.com/AlexzanderFlores/WOKCommands)
 
 
 <a href='http://wornoffkeys.com/discord?from=wokcommands-npm' target='_blank'>![alt Discord](https://img.shields.io/discord/464316540490088448?color=7289da&logo=discord&logoColor=white)</a> <a href='https://github.com/AlexzanderFlores/WOKCommands' target='_blank'>![alt GitHub Repo](https://img.shields.io/github/stars/AlexzanderFlores/WOKCommands?style=social)</a>
