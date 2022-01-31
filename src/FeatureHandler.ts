@@ -44,7 +44,7 @@ class FeatureHandler {
 
     if (amount > 0) {
       console.log(
-        `WOKCommands > Loading ${amount} listener${amount === 1 ? '' : 's'}...`
+        `command-handler > Loading ${amount} listener${amount === 1 ? '' : 's'}...`
       )
 
       for (const [file, fileName] of files) {
@@ -60,7 +60,7 @@ class FeatureHandler {
       }
     } else {
       console.log(
-        `WOKCommands > Loaded ${amount} listener${amount === 1 ? '' : 's'}.`
+        `command-handler > Loaded ${amount} listener${amount === 1 ? '' : 's'}.`
       )
     }
   }
@@ -86,12 +86,12 @@ class FeatureHandler {
 
       if (missing.length && this._instance.showWarns) {
         console.warn(
-          `WOKCommands > Feature "${fileName}" has a config file that doesn't contain the following properties: ${missing}`
+          `command-handler > Feature "${fileName}" has a config file that doesn't contain the following properties: ${missing}`
         )
       }
     } else if (this._instance.showWarns) {
       console.warn(
-        `WOKCommands > Feature "${fileName}" does not export a config object.`
+        `command-handler > Feature "${fileName}" does not export a config object.`
       )
     }
 
@@ -109,7 +109,7 @@ class FeatureHandler {
 
     if (config && config.loadDBFirst === true) {
       console.warn(
-        `WOKCommands > config.loadDBFirst in features is no longer required. MongoDB is now connected to before any features or commands are loaded.`
+        `command-handler > config.loadDBFirst in features is no longer required. MongoDB is now connected to before any features or commands are loaded.`
       )
     }
 

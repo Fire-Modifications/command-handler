@@ -66,7 +66,7 @@ const getFirstEmbed = (
 
     if (!emoji) {
       console.warn(
-        `WOKCommands > Category "${key}" does not have an emoji icon.`
+        `command-handler > Category "${key}" does not have an emoji icon.`
       )
 
       continue

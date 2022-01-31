@@ -136,7 +136,7 @@ class ReactionHandler {
     static getHelp = (command, instance, guild) => {
         const { description, syntax, names } = command;
         if (names === undefined) {
-            console.error('WOKCommands > A command does not have a name assigned to it.');
+            console.error('command-handler > A command does not have a name assigned to it.');
             return '';
         }
         const mainName = typeof names === 'string' ? names : names.shift();

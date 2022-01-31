@@ -28,7 +28,7 @@ class FeatureHandler {
         const files = get_all_files_1.default(dir, typeScript ? '.ts' : '');
         const amount = files.length;
         if (amount > 0) {
-            console.log(`WOKCommands > Loading ${amount} listener${amount === 1 ? '' : 's'}...`);
+            console.log(`command-handler > Loading ${amount} listener${amount === 1 ? '' : 's'}...`);
             for (const [file, fileName] of files) {
                 const debug = `WOKCommands DEBUG > Feature "${fileName}" load time`;
                 if (this._instance.debug) {
@@ -41,7 +41,7 @@ class FeatureHandler {
             }
         }
         else {
-            console.log(`WOKCommands > Loaded ${amount} listener${amount === 1 ? '' : 's'}.`);
+            console.log(`command-handler > Loaded ${amount} listener${amount === 1 ? '' : 's'}.`);
         }
     };
     registerFeature = (file, fileName) => {
@@ -62,11 +62,11 @@ class FeatureHandler {
             if (!dbName)
                 missing.push('dbName');
             if (missing.length && this._instance.showWarns) {
-                console.warn(`WOKCommands > Feature "${fileName}" has a config file that doesn't contain the following properties: ${missing}`);
+                console.warn(`command-handler > Feature "${fileName}" has a config file that doesn't contain the following properties: ${missing}`);
             }
         }
         else if (this._instance.showWarns) {
-            console.warn(`WOKCommands > Feature "${fileName}" does not export a config object.`);
+            console.warn(`command-handler > Feature "${fileName}" does not export a config object.`);
         }
         if (typeof func !== 'function') {
             return;
@@ -78,7 +78,7 @@ class FeatureHandler {
             return this.isEnabled(guildId, file);
         };
         if (config && config.loadDBFirst === true) {
-            console.warn(`WOKCommands > config.loadDBFirst in features is no longer required. MongoDB is now connected to before any features or commands are loaded.`);
+            console.warn(`command-handler > config.loadDBFirst in features is no longer required. MongoDB is now connected to before any features or commands are loaded.`);
         }
         func(this._client, this._instance, isEnabled);
     };

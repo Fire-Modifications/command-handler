@@ -73,7 +73,7 @@ export default class MessageHandler {
     const translations = this._messages[messageId]
     if (!translations) {
       console.error(
-        `WOKCommands > Could not find the correct message to send for "${messageId}"`
+        `command-handler > Could not find the correct message to send for "${messageId}"`
       )
       return 'Could not find the correct message to send. Please report this to the bot developer.'
     }
@@ -99,7 +99,7 @@ export default class MessageHandler {
     const items = this._messages[embedId]
     if (!items) {
       console.error(
-        `WOKCommands > Could not find the correct item to send for "${embedId}" -> "${itemId}"`
+        `command-handler > Could not find the correct item to send for "${embedId}" -> "${itemId}"`
       )
       return 'Could not find the correct message to send. Please report this to the bot developer.'
     }
@@ -107,7 +107,7 @@ export default class MessageHandler {
     const translations = items[itemId]
     if (!translations) {
       console.error(
-        `WOKCommands > Could not find the correct message to send for "${embedId}"`
+        `command-handler > Could not find the correct message to send for "${embedId}"`
       )
       return 'Could not find the correct message to send. Please report this to the bot developer.'
     }

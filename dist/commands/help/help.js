@@ -50,7 +50,7 @@ module.exports = {
         const { message, channel, instance, args } = options;
         const { guild } = channel;
         if (guild && !guild.me?.permissions.has('SEND_MESSAGES')) {
-            console.warn(`WOKCommands > Could not send message due to no permissions in channel for ${guild.name}`);
+            console.warn(`command-handler > Could not send message due to no permissions in channel for ${guild.name}`);
             return;
         }
         if (guild && !guild.me?.permissions.has('ADD_REACTIONS')) {

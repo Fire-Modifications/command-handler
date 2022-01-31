@@ -116,7 +116,7 @@ class SlashCommands {
             if (cmd.description !== description ||
                 cmd.options.length !== options.length ||
                 optionsChanged) {
-                console.log(`WOKCommands > Updating${guildId ? ' guild' : ''} slash command "${name}"`);
+                console.log(`command-handler > Updating${guildId ? ' guild' : ''} slash command "${name}"`);
                 return commands?.edit(cmd.id, {
                     name,
                     description,
@@ -126,7 +126,7 @@ class SlashCommands {
             return Promise.resolve(cmd);
         }
         if (commands) {
-            console.log(`WOKCommands > Creating${guildId ? ' guild' : ''} slash command "${name}"`);
+            console.log(`command-handler > Creating${guildId ? ' guild' : ''} slash command "${name}"`);
             const newCommand = await commands.create({
                 name,
                 description,
@@ -141,7 +141,7 @@ class SlashCommands {
         if (commands) {
             const cmd = commands.cache.get(commandId);
             if (cmd) {
-                console.log(`WOKCommands > Deleting${guildId ? ' guild' : ''} slash command "${cmd.name}"`);
+                console.log(`command-handler > Deleting${guildId ? ' guild' : ''} slash command "${cmd.name}"`);
                 cmd.delete();
             }
         }

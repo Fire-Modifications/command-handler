@@ -64,7 +64,7 @@ class CommandHandler {
             }
             const files = get_all_files_1.default(dir, typeScript ? '.ts' : '');
             const amount = files.length;
-            console.log(`WOKCommands > Loaded ${amount} command${amount === 1 ? '' : 's'}.`);
+            console.log(`command-handler > Loaded ${amount} command${amount === 1 ? '' : 's'}.`);
             for (const [file, fileName] of files) {
                 await this.registerCommand(instance, client, file, fileName);
             }
@@ -193,34 +193,34 @@ class CommandHandler {
             missing.push('Description');
         }
         if (missing.length && instance.showWarns) {
-            console.warn(`WOKCommands > Command "${names[0]}" does not have the following properties: ${missing}.`);
+            console.warn(`command-handler > Command "${names[0]}" does not have the following properties: ${missing}.`);
         }
         if (testOnly && !instance.testServers.length) {
-            console.warn(`WOKCommands > Command "${names[0]}" has "testOnly" set to true, but no test servers are defined.`);
+            console.warn(`command-handler > Command "${names[0]}" has "testOnly" set to true, but no test servers are defined.`);
         }
         if (slash !== undefined && typeof slash !== 'boolean' && slash !== 'both') {
-            throw new Error(`WOKCommands > Command "${names[0]}" has a "slash" property that is not boolean "true" or string "both".`);
+            throw new Error(`command-handler > Command "${names[0]}" has a "slash" property that is not boolean "true" or string "both".`);
         }
         if (!slash && options.length) {
-            throw new Error(`WOKCommands > Command "${names[0]}" has an "options" property but is not a slash command.`);
+            throw new Error(`command-handler > Command "${names[0]}" has an "options" property but is not a slash command.`);
         }
         if (slash && !(builtIn && !instance.isDBConnected())) {
             if (!description) {
-                throw new Error(`WOKCommands > A description is required for command "${names[0]}" because it is a slash command.`);
+                throw new Error(`command-handler > A description is required for command "${names[0]}" because it is a slash command.`);
             }
             if (minArgs !== undefined && !expectedArgs) {
-                throw new Error(`WOKCommands > Command "${names[0]}" has "minArgs" property defined without "expectedArgs" property as a slash command.`);
+                throw new Error(`command-handler > Command "${names[0]}" has "minArgs" property defined without "expectedArgs" property as a slash command.`);
             }
             if (options.length) {
                 for (const key in options) {
                     const name = options[key].name;
                     let lowerCase = name.toLowerCase();
                     if (name !== lowerCase && instance.showWarns) {
-                        console.log(`WOKCommands > Command "${names[0]}" has an option of "${name}". All option names must be lower case for slash commands. WOKCommands will modify this for you.`);
+                        console.log(`command-handler > Command "${names[0]}" has an option of "${name}". All option names must be lower case for slash commands. WOKCommands will modify this for you.`);
                     }
                     if (lowerCase.match(/\s/g)) {
                         lowerCase = lowerCase.replace(/\s/g, '_');
-                        console.log(`WOKCommands > Command "${names[0]}" has an option of "${name}" with a white space in it. It is a best practice for option names to only be one word. WOKCommands will modify this for you.`);
+                        console.log(`command-handler > Command "${names[0]}" has an option of "${name}" with a white space in it. It is a best practice for option names to only be one word. WOKCommands will modify this for you.`);
                     }
                     options[key].name = lowerCase;
                 }

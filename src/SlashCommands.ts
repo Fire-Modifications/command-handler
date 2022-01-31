@@ -190,7 +190,7 @@ class SlashCommands {
         optionsChanged
       ) {
         console.log(
-          `WOKCommands > Updating${
+          `command-handler > Updating${
             guildId ? ' guild' : ''
           } slash command "${name}"`
         )
@@ -207,7 +207,7 @@ class SlashCommands {
 
     if (commands) {
       console.log(
-        `WOKCommands > Creating${
+        `command-handler > Creating${
           guildId ? ' guild' : ''
         } slash command "${name}"`
       )
@@ -233,7 +233,7 @@ class SlashCommands {
       const cmd = commands.cache.get(commandId)
       if (cmd) {
         console.log(
-          `WOKCommands > Deleting${guildId ? ' guild' : ''} slash command "${
+          `command-handler > Deleting${guildId ? ' guild' : ''} slash command "${
             cmd.name
           }"`
         )

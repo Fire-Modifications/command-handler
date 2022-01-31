@@ -192,7 +192,7 @@ class ReactionHandler {
     const { description, syntax, names } = command
     if (names === undefined) {
       console.error(
-        'WOKCommands > A command does not have a name assigned to it.'
+        'command-handler > A command does not have a name assigned to it.'
       )
       return ''
     }

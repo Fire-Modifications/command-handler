@@ -83,12 +83,12 @@ export default class WOKCommands extends EventEmitter {
       }
     } else {
       if (showWarns) {
-        console.warn(
-          'WOKCommands > No MongoDB connection URI provided. Some features might not work! See this for more details:\nhttps://docs.wornoffkeys.com/databases/mongodb'
-        )
+       // console.warn(
+      //    'command-handler > No MongoDB connection URI provided. Some features might not work! See this for more details:\nhttps://docs.wornoffkeys.com/databases/mongodb'
+       // )
       }
 
-      this.emit(Events.DATABASE_CONNECTED, null, '')
+      //this.emit(Events.DATABASE_CONNECTED, null, '')
     }
 
     this._commandsDir = commandsDir || commandDir || this._commandsDir
@@ -101,7 +101,7 @@ export default class WOKCommands extends EventEmitter {
       !(this._commandsDir.includes('/') || this._commandsDir.includes('\\'))
     ) {
       throw new Error(
-        "WOKCommands > The 'commands' directory must be an absolute path. This can be done by using the 'path' module. More info: https://docs.wornoffkeys.com/setup-and-options-object"
+        "command-handler > The 'commands' directory must be an absolute path. This can be done by using the 'path' module. More info: https://docs.wornoffkeys.com/setup-and-options-object"
       )
     }
 
@@ -110,7 +110,7 @@ export default class WOKCommands extends EventEmitter {
       !(this._featuresDir.includes('/') || this._featuresDir.includes('\\'))
     ) {
       throw new Error(
-        "WOKCommands > The 'features' directory must be an absolute path. This can be done by using the 'path' module. More info: https://docs.wornoffkeys.com/setup-and-options-object"
+        "command-handler > The 'features' directory must be an absolute path. This can be done by using the 'path' module. More info: https://docs.wornoffkeys.com/setup-and-options-object"
       )
     }
 
@@ -165,12 +165,12 @@ export default class WOKCommands extends EventEmitter {
       typeScript
     )
 
-    console.log('WOKCommands > Your bot is now running.')
+    console.log('command-handler > Your bot is now running.')
   }
 
   public setMongoPath(mongoPath: string | undefined): WOKCommands {
     console.warn(
-      'WOKCommands > .setMongoPath() no longer works as expected. Please pass in your mongo URI as a "mongoUri" property using the options object. For more information: https://docs.wornoffkeys.com/databases/mongodb'
+      'command-handler > .setMongoPath() no longer works as expected. Please pass in your mongo URI as a "mongoUri" property using the options object. For more information: https://docs.wornoffkeys.com/databases/mongodb'
     )
     return this
   }
@@ -270,7 +270,7 @@ export default class WOKCommands extends EventEmitter {
 
       if (this.isEmojiUsed(targetEmoji)) {
         console.warn(
-          `WOKCommands > The emoji "${targetEmoji}" for category "${name}" is already used.`
+          `command-handler > The emoji "${targetEmoji}" for category "${name}" is already used.`
         )
       }
 
@@ -340,7 +340,7 @@ export default class WOKCommands extends EventEmitter {
 
   public setBotOwner(botOwner: string | string[]): WOKCommands {
     console.log(
-      'WOKCommands > setBotOwner() is deprecated. Please specify your bot owners in the object constructor instead. See https://docs.wornoffkeys.com/setup-and-options-object'
+      'command-handler > setBotOwner() is deprecated. Please specify your bot owners in the object constructor instead. See https://docs.wornoffkeys.com/setup-and-options-object'
     )
 
     if (typeof botOwner === 'string') {

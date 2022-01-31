@@ -37,7 +37,7 @@ module.exports = {
 
     if (guild && !guild.me?.permissions.has('SEND_MESSAGES')) {
       console.warn(
-        `WOKCommands > Could not send message due to no permissions in channel for ${guild.name}`
+        `command-handler > Could not send message due to no permissions in channel for ${guild.name}`
       )
       return
     }
